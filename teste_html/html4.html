@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 18 - Desafio Integrado</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f9;
+        }
+
+        .dashboard-container {
+            width: 80%;
+            margin: 5px auto;
+            padding: 20px;
+            border: 1px solid #e9e9e9;
+            box-shadow: 0 4px 8px rgba(11, 185, 55, 0.1);
+            background-color: white;
+        }
+
+        .form-row {
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-row:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .form-row label {
+            width: 100px;
+            font-weight: bold;
+        }
+
+        /* Estilo padrão dos campos */
+        .form-row input, .form-row textarea {
+            flex: 1;
+            padding: 12px; /* Ajustado aqui em vez do HTML */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none; /* Remove a borda padrão do navegador ao clicar */
+        }
+
+        /* Efeito ao passar o mouse */
+        .form-row input:hover, .form-row textarea:hover {
+            border: 1px solid #888;
+        }
+
+        .form-row input:invalid {
+            border: 2px solid red;
+        }
+
+        /* Bônus: Deixa a borda verde quando estiver correto */
+        .form-row input:valid {
+            border: 2px solid green;
+        }
+
+        button {
+            margin: 20px 15px;
+            padding: 10px 20px; 
+            cursor: pointer;
+        }
+        .form-row
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #eee;
+        }
+
+        .status.ativo { color: green; }
+        .status.inativo { color: red; }
+       
+    </style>
+    </head>
+<body>
+    <div class="dashboard-container">
+        <h1>Dashboard de Produtos</h1>
+        
+        <form>
+            <div class="form-row">
+                <label>Produto:</label>
+                <input type="text" required placeholder="Nome do item" padding="12px">
+            </div>
+            <div class="form-row">
+                <label>Preço:</label>
+                <input type="number" required placeholder="0.00" padding="12px">
+            </div>
+            <div class="form-row">
+                <label>Descrição:</label>
+                <textarea placeholder="Detalhes técnicos..." padding="12px"></textarea>
+            </div>
+            <button type="submit" class="btn-ghost">Salvar Produto</button>
+        </form>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Valor</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Teclado</td>
+                    <td>R$ 200</td>
+                    <td><span class="status ativo">Disponível</span></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Mouse</td>
+                    <td>R$ 100</td>
+                    <td><span class="status inativo">Esgotado</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>-

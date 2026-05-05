@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 18 - Desafio Integrado (Versão Final)</title>
+    <style>
+        /* 1. ESTILOS GERAIS */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .dashboard-container {
+            width: 80%;
+            max-width: 1000px; 
+            margin: 50px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+        }
+
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        /* 2. ESTILOS DO FORMULÁRIO */
+        .form-row {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        /* Zebra Striping no Formulário */
+        .form-row:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .form-row label {
+            width: 120px; 
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* Estilo padrão dos inputs e textarea */
+        .form-row input, 
+        .form-row textarea {
+            flex: 1; 
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+            outline: none; /* Remove a borda azul padrão do navegador ao clicar */
+            transition: border 0.3s ease;
+        }
+
+        .form-row textarea {
+            resize: vertical;
+            height: 80px;
+        }
+
+        /* Efeitos de Validação e Hover nos Inputs */
+        .form-row input:hover, 
+        .form-row textarea:hover {
+            border: 1px solid #888;
+        }
+
+        .form-row input:invalid {
+            border: 2px solid #e74c3c; /* Vermelho para inválido/vazio */
+        }
+
+        .form-row input:valid {
+            border: 2px solid #2ecc71; /* Verde para preenchido corretamente */
+        }
+
+        /* 3. ESTILOS DO BOTÃO */
+        .btn-ghost {
+            background-color: transparent;
+            color: #28a745;              
+            border: 2px solid #28a745; 
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 20px 0; /* Ajustado para alinhar à esquerda */
+            transition: all 0.3s ease;
+        }
+
+        .btn-ghost:hover {
+            background-color: #28a745; 
+            color: white;               
+        }
+
+        /* 4. ESTILOS DA TABELA */
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Bordas unidas */
+            margin-top: 30px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #eee;
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Zebra Striping na Tabela */
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* 5. ESTILOS DAS BADGES (STATUS) */
+        .status {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase; /* Deixa o texto em maiúsculo */
+        }
+
+        .status.ativo {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .status.inativo {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Dashboard de Produtos</h1>
+        
+        <form>
+            <div class="form-row">
+                <label>Produto:</label>
+                <input type="text" required placeholder="Nome do item">
+            </div>
+            
+            <div class="form-row">
+                <label>Preço (R$):</label>
+                <input type="number" required placeholder="0.00" step="0.01">
+            </div>
+            
+            <div class="form-row">
+                <label>Descrição:</label>
+                <textarea placeholder="Detalhes técnicos..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn-ghost">Salvar Produto</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Valor</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Teclado Mecânico</td>
+                    <td>R$ 200,00</td>
+                    <td><span class="status ativo">Disponível</span></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Mouse Wireless</td>
+                    <td>R$ 100,00</td>
+                    <td><span class="status inativo">Esgotado</span></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Brigadeiro da Camila</td>
+                    <td>R$ 20,00</td>
+                    <td><span class="status ativo">Disponível</span></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Cookie da Camila</td>
+                    <td>R$ 15,00</td>
+                    <td><span class="status inativo">Esgotado</span></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Ovo da Camila</td>
+                    <td>R$ 90,00</td>
+                    <td><span class="status ativo">Disponível</span></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Brownie da Camila</td>
+                    <td>R$ 25,00</td>
+                    <td><span class="status ativo">Disponível</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

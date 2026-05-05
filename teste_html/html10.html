@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 18 - Desafio Integrado</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .dashboard-container {
+            width: 80%;
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-row {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .form-row:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .form-row label {
+            width: 120px;
+            font-weight: bold;
+        }
+
+        .form-row input, .form-row textarea {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .btn-ghost {
+            background-color: transparent;
+            color: #28a745;
+            border: 2px solid #28a745;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 20px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-ghost:hover {
+            background-color: #28a745;
+            color: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #eee;
+        }
+
+        th {
+            background-color: #f8f9fa;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .status {
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .ativo {
+            background-color: #28a745;
+        }
+
+        .inativo {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Dashboard de Produtos</h1>
+        
+        <form>
+            <div class="form-row">
+                <label>Produto:</label>
+                <input type="text" required placeholder="Nome do item">
+            </div>
+            <div class="form-row">
+                <label>Preço:</label>
+                <input type="number" required placeholder="0.00" step="0.01">
+            </div>
+            <div class="form-row">
+                <label>Descrição:</label>
+                <textarea placeholder="Detalhes técnicos..."></textarea>
+            </div>
+            <button type="submit" class="btn-ghost">Salvar Produto</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Valor</th>
+                    <th>Status</th>https://ava.sesisenai.org.br/pluginfile.php/1960789/mod_folder/content/0/app.py?forcedownload=1  
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Teclado Mecânico</td>
+                    <td>R$ 200,00</td>
+                    <td><span class="status ativo">Disponível</span></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Mouse Wireless</td>
+                    <td>R$ 100,00</td>
+                    <td><span class="status inativo">Esgotado</span></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Monitor 24"</td>
+                    <td>R$ 900,00</td>
+                    <td><span class="status ativo">Disponível</span></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Headset Gamer</td>
+                    <td>R$ 350,00</td>
+                    <td><span class="status inativo">Esgotado</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

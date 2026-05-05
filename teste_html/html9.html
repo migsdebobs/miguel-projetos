@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 18 - Desafio Integrado</title>
+    <style>
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .dashboard-container {
+            width: 80%;
+            max-width: 1000px; 
+            margin: 50px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+        }
+
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        
+        .form-row {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        .form-row:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .form-row label {
+            width: 120px; 
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-row input, 
+        .form-row textarea {
+            flex: 1; 
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+            outline: none;
+        }
+
+        input:invalid {
+        border-color: #e74c3c;
+        }
+
+        textarea:focus {
+        border-bottom: 2px solid #28a745 !important;
+        }
+
+        .form-row textarea {
+            resize: vertical;
+            height: 80px;
+        }
+
+     
+        .btn-ghost {
+           
+            background-color: transparent;
+            color: #28a745;              
+            border: 2px solid #28a745;         
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 20px 0; 
+            transition: all 0.3s ease;
+        }
+
+      
+        .btn-ghost:hover {
+            background-color: #28a745; 
+            color: white;               
+            
+        }
+
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background-color: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #eee;
+        }
+
+        th {
+            background-color: #f8f9fa;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:hover {
+            background-color: #e2e6ea; 
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .status.ativo { color: #155724; font-weight: bold; }
+        .status.inativo { color: #721c24; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Dashboard de Produtos</h1>
+        
+        <form>
+            <div class="form-row">
+                <label>Produto:</label>
+                <input type="text" required placeholder="Nome do item">
+            </div>
+            <div class="form-row">
+                <label>Preço:</label>
+                <input type="number" required placeholder="0.00" step="0.01">
+            </div>
+            <div class="form-row">
+                <label>Descrição:</label>
+                <textarea placeholder="Detalhes técnicos..."></textarea>
+            </div>
+            <button type="submit" class="btn-ghost">Salvar Produto</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Valor</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Brigadeiro da Camila</td>
+                    <td>R$ 200,00</td>
+                    <td><span class="status ativo">Disponível</span></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Cokie da Camila</td>
+                    <td>R$ 100,00</td>
+                    <td><span class="status inativo">Esgotado</span></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Ovo da camila</td>
+                    <td>R$ 900,00</td>
+                    <td><span class="status ativo">Disponível</span></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Brawne da Camila</td>
+                    <td>R$ 350,00</td>
+                    <td><span class="status ativo">Disponível</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
